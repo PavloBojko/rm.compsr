@@ -1,17 +1,26 @@
 <?php
 require './../vendor/autoload.php';
+use League\Plates\Engine;
 
-$rout = [
-    '/' => 'homePageControler.php',
-    '/update' => 'updateController.php'
-];
+$templates = new Engine('../app/views');
 
-foreach ($rout as $key => $value) {
+// echo $templates->render('profile', ['name' => 'Jonathan']);
+// echo $templates->render('contact', ['tel' => 'TEL:06645678']);
+echo $templates->render('about', ['title' => 'My Company']);
 
-    if ($_SERVER['REDIRECT_URL'] == $key) {
-        require "./../controllers/{$value}";
-        exit;
-    }
-}
-require "./../controllers/404.php";
-exit;
+
+
+// $rout = [
+//     '/' => 'homePageControler.php',
+//     '/update' => 'updateController.php'
+// ];
+
+// foreach ($rout as $key => $value) {
+
+//     if ($_SERVER['REDIRECT_URL'] == $key) {
+//         require "./../controllers/{$value}";
+//         exit;
+//     }
+// }
+// require "./../controllers/404.php";
+// exit;
