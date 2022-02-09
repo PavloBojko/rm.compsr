@@ -5,7 +5,7 @@ use App\QueryBuilder;
 echo 'homePageControler';
 
 $db = new QueryBuilder();
-// $result = $db->get_ALL('users');
+$result = $db->get_ALL('users');
 
 // $db->Insert(["email"=>"kopyov@gmail.com", "password"=>"123"], 'users');
 
